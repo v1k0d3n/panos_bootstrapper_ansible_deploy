@@ -1,0 +1,3 @@
+---
+- include_tasks: generate_bootstrap.yaml
+- include_tasks: launch_pan_vm.yaml

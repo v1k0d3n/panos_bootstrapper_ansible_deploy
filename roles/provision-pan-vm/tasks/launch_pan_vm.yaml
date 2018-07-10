@@ -1,0 +1,19 @@
+---
+- name: "Removing stale instance file"
+  file:
+    path: "{{ instance_path }}"
+    state: absent
+
+- name: "Create backing file for VM Image"
+  shell: "qemu-img create -b {{ vm_image }} -f qcow2 {{ instance_path }}"
+
+- name: "Define KVM VM"
+  virt:
+      name: "{{ vm_name }}"
+      command: define
+      xml: "{{ lookup('template', 'domain.xml.j2') }}"
+- name: "Start KVM VM"
+  become: true
+  virt:
+      name: "{{ vm_name }}"
+      state: running
