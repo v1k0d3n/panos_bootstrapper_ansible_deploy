@@ -15,7 +15,7 @@ bootstrap_path: /var/lib/libvirt/images/{{ vm_name }}_bootstrap.iso
 instance_path: /var/lib/libvirt/images/{{ vm_name }}_instance.qcow2
 
 # complete list of init-cfg options 
-# refer to https://www.paloaltonetworks.com/documentation/71/pan-os/pan-os/firewall-administration/sample-init-cfg-txt-files for complete details
+# refer to https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/firewall-administration/bootstrap-the-firewall/sample-init-cfgtxt-files for complete details
 
 dhcp_or_static: dhcp-client 
 hostname: "{{ vm_name }}"
